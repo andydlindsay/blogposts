@@ -1,3 +1,5 @@
+# Intro to Memoization
+
 Problem:  
 We have a function that we are going to call multiple times. Our function takes a long time to run (eg. half a second or more) and we find that we're often calling it with the same arguments. What if our function could remember previous times it's been called with certain arguments? Then, if it ever gets called again with those arguments, we can return the value we calculated previously instead of calculating it again. This is where memoization comes in.
 
