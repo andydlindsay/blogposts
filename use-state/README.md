@@ -24,10 +24,11 @@ In the above `increment` function, when we log the value, we see the output neve
 How can we update our `increment` function to have "memory"? We can move the `count` variable to the parent scope (ie. move it _outside_ the function declaration). When we do this, instead of a new `count` being created on each function call, the value of `count` in the parent scope will be used/updated.
 
 ```js
+// move the declaration of count to the parent scope
 let count = 0;
 
 const increment = () => {
-  count += 1;
+  count += 1; // we are now updating the parent's variable
   console.log(count);
 };
 
@@ -37,7 +38,7 @@ increment(); // 3
 increment(); // 4
 ```
 
-Hooray! Our function has memory! The value of `count` is _remembered_ from one call to the next. What we've done is create a `closure`. We would say that `increment` has a closure over the `count` variable.
+Hooray! Our function has memory! The value of `count` is _remembered_ from one call to the next. What we've done is create a `closure`. We would say that `increment` has a _closure_ over the `count` variable. A _closure_ means a function will "remember" the variables that were in scope when the function was declared. The function will even "remember" these values if it is exported to another file.
 
 If our React components are functions, can we give them "memory" in the same way? Yes... and no. Let's take a look at an example.
 
@@ -106,9 +107,11 @@ const [count, setCount] = useState(0);
 So, if we update state and then log it, we're going to see _old_ state; the state from _this_ render, because our update is for the _next_ render.
 
 ```js
-console.log(count); // 8
-setCount(count + 1); // set count to 9 (8 + 1) for the next render
-console.log(count); // 8; count is a constant value
+console.log(count); // 0
+setCount(count + 1); // set count to 1 (0 + 1) for the next render
+console.log(count); // 0; count is a constant value
 ```
 
-Hopefully this helped your understanding of what `useState` is for.
+We can see that `useState` allows us to create closures so that our functional components have "memory". Importantly, if React creates our closures for us, then React knows about them and knows about any updates to them and can act accordingly (eg. update the DOM).
+
+Hopefully this short reading helped clear up any questions you had about the `useState` hook.
