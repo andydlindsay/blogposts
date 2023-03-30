@@ -118,4 +118,4 @@ We can see that `useState` allows us to create closures so that our functional c
 
 Hopefully this short reading helped clear up any questions you had about the `useState` hook.
 
-Andy Lindsay is full-time web instructor for Lighthouse Labs’ Web Development Program. Check out Andy’s other work at [GitHub link](https://github.com/andydlindsay) or connect on [LinkedIn](https://www.linkedin.com/in/andydlindsay/).
+Andy Lindsay is full-time web instructor for Lighthouse Labs’ Web Development Program. Check out Andy’s other work at [GitHub](https://github.com/andydlindsay) or connect on [LinkedIn](https://www.linkedin.com/in/andydlindsay/).
