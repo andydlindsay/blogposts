@@ -1,5 +1,7 @@
 # Understanding React's `useState` hook
 
+First, what is a hook? Hooks are JavaScript functions that allow our functional components to "hook" into React itself. This gives us a way to manage data, safely handle side effects, and take advantage of other cool React features. Some hooks are built into React such as `useState` (the subject of this article) and some have been written by the community and these are known as _custom hooks_.
+
 React has had functional components since the beginning. It wasn't functional components that were added to React in 2019, it was `hooks`.
 
 Prior to the introduction of hooks, functional components were for _presentation_. They had no internal state and acted only on `props` being passed in. This is because functions have no memory.
@@ -115,3 +117,5 @@ console.log(count); // 0; count is a constant value
 We can see that `useState` allows us to create closures so that our functional components have "memory". Importantly, if React creates our closures for us, then React knows about them and knows about any updates to them and can act accordingly (eg. update the DOM).
 
 Hopefully this short reading helped clear up any questions you had about the `useState` hook.
+
+Andy Lindsay is full-time web instructor for Lighthouse Labs’ Web Development Program. Check out Andy’s other work at [GitHub link](https://github.com/andydlindsay) or connect on [LinkedIn](https://www.linkedin.com/in/andydlindsay/).
